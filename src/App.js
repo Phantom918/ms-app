@@ -13,7 +13,7 @@ function App() {
       <div id='root'>
         <Routes>
           {/* 帖子列表 */}
-          <Route exact path="/" element={<AppLayout />} >
+          <Route path="/" element={<AppLayout />} >
             <Route path="userInfo" element={<UserInfo />} />
             <Route path="userDetail" element={<UserDetail />} />
           </Route>

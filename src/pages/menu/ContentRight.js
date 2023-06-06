@@ -4,7 +4,7 @@ import UserInfo from '../user/UserInfo';
 const { Content } = Layout;
 
 // 中间正文内容组件
-const ContentRight = () => {
+const ContentRight = (props) => {
 
     const { token: { colorBgContainer } } = theme.useToken();
 
@@ -15,7 +15,7 @@ const ContentRight = () => {
                 <Breadcrumb.Item>Bill</Breadcrumb.Item>
             </Breadcrumb>
             <div style={{ padding: 24, minHeight: 360, background: colorBgContainer }}>
-                <UserInfo  />
+                {props.children}
             </div>
         </Content>
     )
