@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React from 'react';
+
+import AppLayout from './pages/menu/AppLayout';
+import UserInfo from './pages/user/UserInfo';
+import UserDetail from './pages/user/UserDetail';
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div id='root'>
+        <Routes>
+          {/* 帖子列表 */}
+          <Route exact path="/" element={<AppLayout />} >
+            <Route path="userInfo" element={<UserInfo />} />
+            <Route path="userDetail" element={<UserDetail />} />
+          </Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
