@@ -7,7 +7,7 @@ import ContentRight from "./ContentRight"
 import FooterBottom from "./FooterBottom"
 
 // 
-const AppLayout = () => {
+const AppLayout = (props) => {
 
     return (
         <div>
@@ -18,7 +18,7 @@ const AppLayout = () => {
                     {/* 顶部头信息 */}
                     <HeaderTop />
                     {/* 中间正文显示内容 */}
-                    <ContentRight />
+                    <ContentRight childrenLayout={props.children} />
                     {/* 页面底部 */}
                     <FooterBottom />
                 </Layout>

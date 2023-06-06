@@ -4,7 +4,8 @@ import UserInfo from '../user/UserInfo';
 const { Content } = Layout;
 
 // 中间正文内容组件
-const ContentRight = (props) => {
+const ContentRight = ({ childrenLayout }) => {
+    console.log('childrenLayout:', childrenLayout);
 
     const { token: { colorBgContainer } } = theme.useToken();
 
@@ -15,7 +16,7 @@ const ContentRight = (props) => {
                 <Breadcrumb.Item>Bill</Breadcrumb.Item>
             </Breadcrumb>
             <div style={{ padding: 24, minHeight: 360, background: colorBgContainer }}>
-                {props.children}
+                {childrenLayout}
             </div>
         </Content>
     )
