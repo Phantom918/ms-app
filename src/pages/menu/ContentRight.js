@@ -1,5 +1,6 @@
 import { Breadcrumb, Layout, theme } from 'antd';
 import UserInfo from '../user/UserInfo';
+import { Outlet } from 'react-router-dom';
 
 const { Content } = Layout;
 
@@ -16,7 +17,7 @@ const ContentRight = ({ childrenLayout }) => {
                 <Breadcrumb.Item>Bill</Breadcrumb.Item>
             </Breadcrumb>
             <div style={{ padding: 24, minHeight: 360, background: colorBgContainer }}>
-                {childrenLayout}
+                <Outlet />
             </div>
         </Content>
     )

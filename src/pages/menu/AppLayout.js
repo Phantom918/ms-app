@@ -9,6 +9,8 @@ import FooterBottom from "./FooterBottom"
 // 
 const AppLayout = (props) => {
 
+    console.log('AppLayout => props:', props.children);
+
     return (
         <div>
             <Layout style={{ minHeight: '100vh' }}>

@@ -10,7 +10,7 @@ function App() {
 
   return (
     <Router>
-      <div id='root'>
+      <div id='root11'>
         <Routes>
           {/* 帖子列表 */}
           <Route path="/" element={<AppLayout />} >
