@@ -7,10 +7,7 @@ import ContentRight from "./ContentRight"
 import FooterBottom from "./FooterBottom"
 
 // 
-const AppLayout = (props) => {
-
-    console.log('AppLayout => props:', props.children);
-
+const AppLayout = () => {
     return (
         <div>
             <Layout style={{ minHeight: '100vh' }}>
@@ -20,14 +17,13 @@ const AppLayout = (props) => {
                     {/* 顶部头信息 */}
                     <HeaderTop />
                     {/* 中间正文显示内容 */}
-                    <ContentRight childrenLayout={props.children} />
+                    <ContentRight/>
                     {/* 页面底部 */}
                     <FooterBottom />
                 </Layout>
             </Layout>
         </div>
-    )
-
+    );
 }
 
 export default AppLayout;
