@@ -8,7 +8,7 @@ const { Header } = Layout;
 const userItems = [
     { key: '1', label: (<Link to="/userInfo">用户信息</Link>), },
     { key: '2', label: (<Link to="/userDetail">用户详情</Link>), },
-    { key: '3', label: (<a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com"> 3rd menu item </a>), },
+    { key: '3', label: (<Link to="/error">错误页面</Link>), },
 ];
 
 
