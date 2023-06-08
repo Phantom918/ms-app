@@ -6,9 +6,10 @@ const { Header } = Layout;
 
 
 const userItems = [
-    { key: '1', label: (<Link to="/userInfo">用户信息</Link>), },
-    { key: '2', label: (<Link to="/userDetail">用户详情</Link>), },
-    { key: '3', label: (<Link to="/error">错误页面</Link>), },
+    { key: '1', label: (<Link to="/main/userInfo">用户信息</Link>), },
+    { key: '2', label: (<Link to="/main/userDetail">用户详情</Link>), },
+    { key: '3', label: (<Link to="/main/error">错误页面</Link>), },
+    { key: '4', label: (<Link to="/login">登录</Link>), },
 ];
 
 
