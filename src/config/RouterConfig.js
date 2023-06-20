@@ -7,6 +7,7 @@ import AppLayout from '../pages/menu/AppLayout';
 import UserInfo from '../pages/user/UserInfo';
 import UserDetail from '../pages/user/UserDetail';
 import UserLogin from '../pages/user/UserLogin';
+import TokenAnalyze from '../pages/user/TokenAnalyze';
 
 // 系统相关页面
 import ErrorPage from '../pages/system/ErrorPage';
@@ -25,6 +26,7 @@ const routerConfig = createBrowserRouter(
                 <Route index element={<DefaultPage />} />
             </Route>
             <Route path="login" element={<UserLogin />} />
+            <Route path="token" element={<TokenAnalyze />} />
             <Route index element={<Navigate to="/main" />} />
         </Route>
 

@@ -1,6 +1,6 @@
 import { Layout, theme, Avatar, Row, Col, Dropdown } from 'antd';
 import { AntDesignOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const { Header } = Layout;
 
@@ -15,6 +15,7 @@ const userItems = [
 
 const HeaderTop = () => {
     const { token: { colorBgContainer } } = theme.useToken();
+    const navigate = useNavigate();
 
     return (
         <Header style={{ padding: 0, background: colorBgContainer }} >
