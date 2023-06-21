@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Button, Checkbox, Form, Input, Row, Col } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { useNavigate, useSearchParams } from "react-router-dom";
-import request from "../../service/request";
+import request, { get, post } from "../../service/axiosConfig";
+import axios from "axios";
 
 import '../../styles/login.css';
 
@@ -22,8 +23,37 @@ const TokenAnalyze = () => {
 
     async function login() {
         console.info("开始调用接口....")
-        let response = await request("/api2", {});
-        console.log("res=======: " + response);
+        // let response = await get("/api1/user/test2", { name: "小明", age: "18" });
+
+        // 使用这里原生没问题
+        // let response = await axios.get('/api1/user/test1', {
+        //     params: { name: "小明", age: "18" }
+        // })
+        //     // .then(function (response) {
+        //     //     console.info("调用接口成功....")
+        //     //     console.log(response);
+        //     // })
+        //     // .catch(function (error) {
+        //     //     console.info("调用接口异常....")
+        //     //     console.log(error);
+        //     // })
+        //     // .finally(function () {
+        //     //     console.info("调用接口finally....")
+        //     //     // always executed
+        //     // });
+        // console.log("res=======: %o", response.data);
+
+        request.get("/api1/user/test1", { name: "小明", age: "18" })
+        .then(res => {
+            console.log("res=======: %o", res.data);
+        })
+        .catch(err => {
+            console.log("err=======: %o", err);
+        })
+
+
+
+
         // let resJson = await res.json();
         // console.log(resJson);
         // if (resJson.code === 200) {

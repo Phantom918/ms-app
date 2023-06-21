@@ -1,3 +1,4 @@
+
 // axios 的跨域配置
 // 在 src 文件夹下创建一个 setupProxy.js 文件，注意：位置、名字都不能变，否则会报错。
 
@@ -11,7 +12,7 @@ module.exports = function (app) {
         // api1: 需要转发的请求(所有带有/api1前缀的请求都会转发给9001)
         proxy('/api1', {
             //配置转发目标地址(返回数据的真实后端服务器地址)
-            target: 'http://localhost:9001',
+            target: 'http://127.0.0.1:9001/',
             // 控制服务器接收到的请求头中host字段的值
             // true: 后端服务器收到的请求头中的host为 localhost:9001
             // false: 后端服务器收到的请求头中的host为 localhost:3000,  默认值就是false, 一般设置为true
@@ -20,7 +21,7 @@ module.exports = function (app) {
             pathRewrite: { '^/api1': '' }
         }),
         proxy('/api2', {
-            target: 'http://httpbin.org/get',
+            target: 'http://httpbin.org/anything/',
             changeOrigin: true,
             pathRewrite: { '^/api2': '' }
         })
