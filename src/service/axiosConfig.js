@@ -2,12 +2,12 @@ import axios from 'axios';
 
 
 // 开发环境前端服务地址
-const devBaseURL = "http://127.0.0.1.3000/";
+const devBaseURL = "http://127.0.0.1.3000";
 // 生产环境前端服务地址
-const proBaseURL = "https://127.0.0.1.3000/";
+const proBaseURL = "https://127.0.0.1.3000";
 const BASE_URL = process.env.NODE_ENV === 'development' ? devBaseURL : proBaseURL;
 // 请求超时时间
-const TIMEOUT = 20000;
+const TIMEOUT = 200000;
 
 
 console.info("当前环境的 BASE_URL: %s", BASE_URL);
@@ -34,7 +34,11 @@ service.interceptors.request.use(config => {
     // }
     // 如果还需要在请求头内添加其他内容可以自己添加 [] 内为自定义的字段名 = 后的内容为字段名对应的内容
     //config.headers['api'] = api
-
+    console.info("baseURL: %s", config.baseURL);
+    console.info("url: %s", config.url);
+    console.info("timeout: %s", config.timeout);
+    console.info("data: %o", config.data);
+    console.info("params: %o", config.params);
     //请求携带的信息
     config.headers = {
         'Content-Type': 'application/json',
@@ -83,36 +87,36 @@ service.interceptors.response.use(response => {
     }
 });
 
-/* 统一封装get请求 */
-export const get = (url, params, config = {}) => {
-    return new Promise((resolve, reject) => {
-        service({
-            method: 'get',
-            url,
-            params,
-            ...config
-        }).then(response => {
-            resolve(response)
-        }).catch(error => {
-            reject(error)
-        })
-    })
-}
+// /* 统一封装get请求 */
+// export const get = (url, params, config = {}) => {
+//     return new Promise((resolve, reject) => {
+//         service({
+//             method: 'get',
+//             url,
+//             params,
+//             ...config
+//         }).then(response => {
+//             resolve(response)
+//         }).catch(error => {
+//             reject(error)
+//         })
+//     })
+// }
 
-/* 统一封装post请求  */
-export const post = (url, data, config = {}) => {
-    return new Promise((resolve, reject) => {
-        service({
-            method: 'post',
-            url,
-            data,
-            ...config
-        }).then(response => {
-            resolve(response)
-        }).catch(error => {
-            reject(error)
-        })
-    })
-}
+// /* 统一封装post请求  */
+// export const post = (url, data, config = {}) => {
+//     return new Promise((resolve, reject) => {
+//         service({
+//             method: 'post',
+//             url,
+//             data,
+//             ...config
+//         }).then(response => {
+//             resolve(response)
+//         }).catch(error => {
+//             reject(error)
+//         })
+//     })
+// }
 
 export default service;

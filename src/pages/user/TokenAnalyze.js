@@ -43,13 +43,13 @@ const TokenAnalyze = () => {
         //     // });
         // console.log("res=======: %o", response.data);
 
-        request.get("/api1/user/test1", { name: "小明", age: "18" })
+        request.get("/api1/user/test1", { params: { name: "小明", age: "18" } })
         .then(res => {
             console.log("res=======: %o", res.data);
         })
         .catch(err => {
             console.log("err=======: %o", err);
-        })
+        });
 
 
 
